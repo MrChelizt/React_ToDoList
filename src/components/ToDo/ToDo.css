@@ -1,0 +1,21 @@
+.toDo-item {
+  display: flex;
+  width: 1000px;
+  justify-content: space-between;
+  margin: 1%;
+}
+
+.progress-blue {
+  width: 8px;
+  background-color: blue;
+}
+
+.progress-red {
+  width: 8px;
+  background-color: red;
+}
+
+.progress-green {
+  width: 8px;
+  background-color: green;
+}

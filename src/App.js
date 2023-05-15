@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import Form from "./components/Form/Form";
+import ToDoList from "./components/ToDo/ToDoList";
 
 function App() {
+  const [toDoList, setToDoList] = useState([]);
+
+  const addToDo = (toDoItem) => {
+    const newToDos = [...toDoList, toDoItem];
+    setToDoList(newToDos);
+  };
+
+  const deleteToDo = (index) => {
+    const newToDos = [...toDoList];
+    newToDos.splice(index, 1);
+    setToDoList(newToDos);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form onAdd={addToDo} />
+      <ToDoList toDoItems={toDoList} onDelete={deleteToDo} />
     </div>
   );
 }
