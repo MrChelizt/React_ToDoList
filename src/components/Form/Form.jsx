@@ -11,9 +11,17 @@ export default function Form({ onAdd }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onAdd(formInputs);
-    setFormInputs({});
-    document.getElementById("toDo-form").reset();
+    if (
+      !formInputs.hasOwnProperty("title") ||
+      !formInputs.hasOwnProperty("date") ||
+      !formInputs.hasOwnProperty("progress")
+    ) {
+      console.log("Please enter a title. date and progress");
+    } else {
+      onAdd(formInputs);
+      setFormInputs({});
+      document.getElementById("toDo-form").reset();
+    }
   };
 
   return (
@@ -42,7 +50,7 @@ export default function Form({ onAdd }) {
             <option value="3">Not Started</option>
           </select>
         </div>
-        <input type="submit" />
+        <input type="submit" id="submit" />
       </form>
     </div>
   );

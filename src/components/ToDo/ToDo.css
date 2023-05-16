@@ -1,6 +1,6 @@
 .toDo-item {
   display: flex;
-  width: 1000px;
+  width: 800px;
   justify-content: space-between;
   margin: 1%;
 }
