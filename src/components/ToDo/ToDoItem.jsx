@@ -13,11 +13,15 @@ export default function ToDoItem({ toDoItem, onDelete }) {
         return "progress-red";
     }
   };
+
+  const title = toDoItem.title;
+  const date = toDoItem.date;
+
   return (
     <div className="toDo-item">
       <div className={getClassName()}></div>
-      <p>{toDoItem.title}</p>
-      <p>{toDoItem.date}</p>
+      <p>{title}</p>
+      <p>{date}</p>
       <button onClick={onDelete}>Delete</button>
     </div>
   );
