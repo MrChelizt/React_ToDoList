@@ -45,9 +45,9 @@ export default function Form({ onAdd }) {
             <option value="DEFAULT" disabled={true}>
               Choose the status
             </option>
-            <option value="1">In Progress</option>
-            <option value="2">Finished</option>
-            <option value="3">Not Started</option>
+            <option value="progress-blue">In Progress</option>
+            <option value="progress-green">Finished</option>
+            <option value="progress-red">Not Started</option>
           </select>
         </div>
         <input type="submit" id="submit" />
