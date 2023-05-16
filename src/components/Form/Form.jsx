@@ -4,14 +4,13 @@ export default function Form({ onAdd }) {
   const [formInputs, setFormInputs] = useState({});
 
   const handleChange = (event) => {
-    const id = event.target.id;
+    const key = event.target.id;
     const value = event.target.value;
-    setFormInputs((values) => ({ ...values, [id]: value }));
+    setFormInputs((values) => ({ ...values, [key]: value }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formInputs);
     onAdd(formInputs);
     setFormInputs({});
     document.getElementById("toDo-form").reset();

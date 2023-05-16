@@ -1,5 +1,7 @@
 import React from "react";
+
 import ToDoItem from "./ToDoItem.jsx";
+
 import "./ToDo.css";
 
 export default function ToDoList({ toDoItems, onDelete }) {
